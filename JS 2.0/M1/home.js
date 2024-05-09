@@ -189,7 +189,7 @@ checkIfCanAccessContent("pro") ;
 checkIfCanAccessContent("starter");
 checkIfCanAccessContent("vip") ;
 checkIfCanAccessContent("free");
-*/
+
 
 //test #23
 document.write("test #23");
@@ -205,3 +205,63 @@ isNumberNotInRange(10, 30, 17) ;
 isNumberNotInRange(10, 30, 5) ;
 isNumberNotInRange(20, 50, 24) ;
 isNumberNotInRange(20, 50, 76) ;
+
+
+//test #24
+document.write("test #24");
+enter();
+function getDiscount(totalSpent){
+  
+    let discount;
+
+    if (totalSpent>=50000){
+        discount =0.1;
+    }else if (totalSpent>= 20000 && totalSpent<50000){
+        discount  = 0.05;
+    }else if (totalSpent>=5000 && totalSpent<20000){
+        discount  = 0.02;
+    }else{
+        discount =0;
+    }
+    
+    if (discount === 0.1){
+        const GOLD_DISCOUNT=discount
+    }else if(discount === 0.05){
+        const SILVER_DISCOUNT = discount
+    }else if(discount === 0.02){
+        const BRONZE_DISCOUNT = discount;
+    }else if(discount === 0){
+        const BASE_DISCOUNT = discount
+    }
+    document.write(discount);
+    // document.write(GOLD_DISCOUNT);
+    enter();
+}
+
+ getDiscount(137000) 
+ getDiscount(46900)
+ getDiscount(8250) 
+ getDiscount(1300) 
+ getDiscount(5000) 
+ getDiscount(20000)
+ getDiscount(50000)
+ */
+
+//test #25
+document.write("test #25");
+enter();
+
+function checkStorage(available, ordered){
+    
+    const result = ordered >= available ? "Not enough goods in stock!" :"The order is accepted, our manager will contact you";
+    document.write(result);  
+    enter();
+}
+
+checkStorage(100, 50) ;
+checkStorage(100, 130) ;
+checkStorage(200, 20) ;
+checkStorage(200, 150) ;
+checkStorage(150, 180) ;
+
+
