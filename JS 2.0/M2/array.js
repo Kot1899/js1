@@ -57,3 +57,40 @@ for (number2 of age){
     enter();
 }
 
+//додавання елемента в кінець масива metod push
+age.push(555,444);
+for (num3 of age){
+    document.writeln(num3);
+}
+
+
+
+
+//присвоєння за посиланням та за значенням
+// прості типи данних - by value
+// складні типи данних (масиви, обєкти) - by reference
+enter();
+enter();
+let a = 5;
+let b = a ;
+document.write(`"a = " ${a}, " b = " ${b}`); //5 & 5 
+enter();
+a=10;
+document.write(`"a = " ${a}, " b = " ${b}`); //10 & 5 
+
+enter();
+enter();
+let array1=[1 ,2 ,3 ,4 ,5];
+let array2= array1;
+document.write("array1 = ", array1.length) // 5
+enter();
+document.write("array2 = ", array2.length)// 5
+
+enter();
+enter();
+
+array1.push(6,7,8);
+document.write("array1 = ", array1.length) //8
+enter();
+document.write("array2 = ", array2.length) //8
+
