@@ -24,3 +24,4 @@ enter();
 const city=["kyiv", "lviv", 'kharkiv'];
 console.log(city.join(""));
 enter();
+ 
