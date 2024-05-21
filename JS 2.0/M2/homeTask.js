@@ -179,7 +179,7 @@ function makeStringFromArray(array, delimiter) {
   makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ");
   makeStringFromArray(["M", "a", "n", "g", "o"], "");
   makeStringFromArray(["top", "picks", "for", "you"], "_");
-  */
+  
 //task#13
 document.write('task #13');
 enter();
@@ -199,3 +199,51 @@ function slugify(title) {
   slugify("English for developer");
   slugify("Ten secrets of JavaScript");
   slugify("How to become a JUNIOR developer in TWO WEEKS");
+  
+
+//task#14
+document.write('task #14');
+enter();
+
+const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+const firstTwoEls = fruits.slice(0,2) ;
+const nonExtremeEls = fruits.slice(1,3);
+const lastThreeEls =fruits.slice(-3) ;
+
+
+//task#15
+document.write('task #15');
+enter();
+
+const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+const newClients = ['Peach', 'Houston'];
+
+const allClients = oldClients.concat(newClients); // Change this line
+
+*/
+//task#16
+document.write('task #16');
+enter();
+
+function makeArray(firstArray, secondArray, maxLength) {
+  
+  let arrayCheckLength ;
+  const arrayCheck= firstArray.concat(secondArray);
+  arrayCheckLength=arrayCheck.length;
+
+  if (maxLength<arrayCheckLength){
+  const arrayShort=arrayCheck.splice(0,maxLength);
+  console.log(arrayShort);
+  return arrayShort;
+  }
+  console.log(arrayCheck);
+  return arrayCheck;
+}
+
+makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)
+makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)
+makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3);
+makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2);
+makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) ;
+makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0);
