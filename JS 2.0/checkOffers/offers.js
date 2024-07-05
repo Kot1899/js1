@@ -5,7 +5,6 @@ const arrayOffersCurrent = offersCurrent.split(",");
 const arrayOffersCurrentLenght=arrayOffersCurrent.length;
 console.log('current offers ', arrayOffersCurrentLenght, ' offers');
 console.log(arrayOffersCurrent);
-// document.write(arrayOffersCurrent);
 
 //get strategy offers as array (strategy 126)
 const offersStrategy= "423,1457,1787,1618,1619,423,1618,1619,1369,1708,1217,1602,1708,1217,1602,1733,1734,1735,1408,1409,1410,1532,229,1810,1408,1409,1410,1217,1602,1691,1686,1217,1532,1693,1688,1217,1532,2125,2125,2126,2071,2121,1370,2076,2111,2124,2116,2071,2121,1370,2122,2076,2111,2124,2117,2123,2116,2122,2076,2071,2117,2123,1695,1690,1217,1532,2118,1217,2127,2129,2128,2112,2115,1302,2120,2096,2113,2114,2097,2098,2111,2087,2088,2089,2090,2091,2093,1302,2094,2118,2082,2119,2112,2115,1302,2120,2096,2113,2114,2097,2098,2087,2088,2089,2090,2091,2093,1302,2094,2118,2082,2119,1829,1831,2118,1217,2127,2129,2128,1827,1891,1892,1836,1864,1865,1876,1893,1894,1871,1872"
@@ -15,32 +14,31 @@ console.log('strategy offers ', arrayOffersStrategyLength, ' offers');
 console.log(arrayOffersStrategy);
 
 //check offers
-const resultNewOffers=[];
-const resultNewOffers2=[];
-const sameOffers=[];
-for (offerCur of arrayOffersCurrent){
-    for (offerStr of arrayOffersStrategy){
-            if(offerStr===offerCur){
-                sameOffers.push(offerStr)
-            }
-            else{
-                resultNewOffers2.push(offerStr)
-            }
-            
+const resultNewOffers=[]
+const resultNewOffersUnique=[]
+const sameOffers=[]
+
+for(offer of arrayOffersStrategy){
+    if(!arrayOffersCurrent.includes(offer)){
+        resultNewOffers.push(offer)
+    }
+    else{
+        sameOffers.push(offer)
     }
 }
 
 //check unique
-for(offerRes of resultNewOffers2){
-    if(!resultNewOffers.includes(offerRes)){
-        resultNewOffers.push(offerRes)
+for(offer of resultNewOffers){
+    if(!resultNewOffersUnique.includes(offer)){
+        resultNewOffersUnique.push(offer)
     }
 }
 
+
 //console write
 console.log('-----------------------RESULT------------------------');
-const resultNewOffersLength= resultNewOffers.length;
-console.log('strategy offers ', resultNewOffersLength, ' offers');
+const resultNewOffersUniqueLength= resultNewOffersUnique.length;
+console.log('strategy offers ', resultNewOffersUniqueLength, ' offers');
 console.log(resultNewOffers);
 
 const sameOffersLength= sameOffers.length;
@@ -48,5 +46,5 @@ console.log('same offers ', sameOffersLength, ' offers');
 console.log(sameOffers);
 
 //write result to string
-const offersNewString= resultNewOffers.join(',');
+const offersNewString= resultNewOffersUnique.join(',');
 document.writeln(offersNewString);
